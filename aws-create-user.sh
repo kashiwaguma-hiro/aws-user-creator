@@ -64,12 +64,12 @@ cat $USERS_FILE | while read USER_NAME || [ -n "${USER_NAME}" ]; do
 
         AWS_ACCOUNT_ID=$(awscmd sts get-caller-identity --query 'Account' --output text)
         AWS_ACCOUNT_ALIAS=$(awscmd iam list-account-aliases --query 'AccountAliases[0]' --output text)
-        echo "https://"${AWS_ACCOUNT_ID}".signin.aws.amazon.com/console" "${USER_NAME}" "${PASSWORD}" > ${AWS_ACCOUNT_ID}_${AWS_ACCOUNT_ALIAS}_${USER_NAME}_password.txt
+        echo "https://"${AWS_ACCOUNT_ID}".signin.aws.amazon.com/console" "${USER_NAME}" "${PASSWORD}" > ${USER_NAME}_${AWS_ACCOUNT_ID}_${AWS_ACCOUNT_ALIAS}_password.txt
     fi
 
     if "${CREATE_ACCESS_KEY}" ; then
         RESULT=$(awscmd iam create-access-key --user-name ${USER_NAME} --output text --query '[AccessKey.AccessKeyId, AccessKey.SecretAccessKey]')
-        echo $RESULT > ${AWS_ACCOUNT_ID}_${AWS_ACCOUNT_ALIAS}_${USER_NAME}_accesskey.txt
+        echo $RESULT > ${USER_NAME}_${AWS_ACCOUNT_ID}_${AWS_ACCOUNT_ALIAS}_accesskey.txt
     fi
     echo "Successed!"
 done

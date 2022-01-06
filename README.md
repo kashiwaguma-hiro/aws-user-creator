@@ -43,10 +43,10 @@ AWSのIAMユーザーを一括で作成するだけのプロダクト
    Creating IAM user Alice...Successed!
    
    $ ls | grep .txt
-   123456789012_ACCOUNT-ALIAS_Alice_accesskey.txt
-   123456789012_ACCOUNT-ALIAS_Alice_password.txt
-   123456789012_ACCOUNT-ALIAS_Bob_accesskey.txt
-   123456789012_ACCOUNT-ALIAS_Bob_password.txt
+   Alice_123456789012_ACCOUNT-ALIAS_accesskey.txt
+   Alice_123456789012_ACCOUNT-ALIAS_password.txt
+   Bob_123456789012_ACCOUNT-ALIAS_accesskey.txt
+   Bob_123456789012_ACCOUNT-ALIAS_password.txt
    users.txt
    
    $ cat 123456789012_ACCOUNT-ALIAS_Alice_accesskey.txt
