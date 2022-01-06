@@ -52,7 +52,7 @@ if [ ! -e $USERS_FILE ];then
   exit 4
 fi
 
-cat $USERS_FILE | while read USER_NAME; do
+cat $USERS_FILE | while read USER_NAME || [ -n "${USER_NAME}" ]; do
     printf "Creating IAM user ${USER_NAME}..."
     awscmd iam create-user --user-name ${USER_NAME} > /dev/null
     awscmd iam wait user-exists --user-name ${USER_NAME}
