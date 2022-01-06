@@ -11,6 +11,7 @@ function usage(){
     echo   "  -a           : APIアクセス用のアクセスキーを生成します. 生成したアクセスキーは ./[AWS_ACCOUNT_ID]_[AWS_ACCOUNT_ALIAS]_ユーザ名_accesskey.txt に出力されます."
     echo   "  -d           : デバッグログを出力."
     echo   "  -h           : 本メッセージを出力します."
+    echo   ""
 }
 
 function awscmd (){
