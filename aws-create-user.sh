@@ -1,6 +1,4 @@
 #/bin/sh
-# ref. https://docs.aws.amazon.com/ja_jp/IAM/latest/UserGuide/id_users_create.html
-
 set -eu
 
 function usage(){
@@ -55,7 +53,7 @@ if [ ! -e $USERS_FILE ];then
 fi
 
 cat $USERS_FILE | while read USER_NAME; do
-    echo "Creating IAM user ${USER_NAME}..."
+    printf "Creating IAM user ${USER_NAME}..."
     awscmd iam create-user --user-name ${USER_NAME} > /dev/null
     awscmd iam wait user-exists --user-name ${USER_NAME}
     awscmd iam add-user-to-group --user-name ${USER_NAME} --group-name ${GROUP}
@@ -73,5 +71,5 @@ cat $USERS_FILE | while read USER_NAME; do
         RESULT=$(awscmd iam create-access-key --user-name ${USER_NAME} --output text --query '[AccessKey.AccessKeyId, AccessKey.SecretAccessKey]')
         echo $RESULT > ${AWS_ACCOUNT_ID}_${AWS_ACCOUNT_ALIAS}_${USER_NAME}_accesskey.txt
     fi
-    printf "Creation completed!!"
+    echo "Successed!"
 done

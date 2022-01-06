@@ -39,8 +39,8 @@ AWSのIAMユーザーを一括で作成するだけのプロダクト
    ```
    $ AWS_ACCESS_KEY_ID=3.AWS_ACCESS_KEY_IDを指定 AWS_SECRET_ACCESS_KEY=3.AWS_SECRET_ACCESS_KEYを指定 \
      sh aws-create-user.sh -g 2.IAMユーザーグループ名を指定 -p -a
-   Creating IAM user Bob... Successed!
-   Creating IAM user Alice... Successed!
+   Creating IAM user Bob...Successed!
+   Creating IAM user Alice...Successed!
    
    $ ls | grep .txt
    123456789012_ACCOUNT-ALIAS_Alice_accesskey.txt
