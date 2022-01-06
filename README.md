@@ -1,5 +1,5 @@
 # aws-user-creater
-aws iam userを作成するだけのプロダクト
+AWSのIAMユーザーを一括で作成するだけのプロダクト
 
 # 動作環境
 - Mac OS Big Sur version 11.4
