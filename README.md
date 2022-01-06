@@ -37,8 +37,8 @@ AWSのIAMユーザーを一括で作成するだけのプロダクト
 1. 本プログラムを実行し、ユーザを作成する  
    (例) IAMユーザとともに、ログイン用のパスワード、アクセスキーも生成する  
    ```
-   $ AWS_ACCESS_KEY_ID=[3のAWS_ACCESS_KEY_IDを指定] AWS_SECRET_ACCESS_KEY=[3のAWS_SECRET_ACCESS_KEYを指定] \
-     sh aws-create-user.sh -g [2のIAMユーザーグループ名を指定] -p -a
+   $ AWS_ACCESS_KEY_ID=3.AWS_ACCESS_KEY_IDを指定 AWS_SECRET_ACCESS_KEY=3.AWS_SECRET_ACCESS_KEYを指定 \
+     sh aws-create-user.sh -g 2.IAMユーザーグループ名を指定 -p -a
    Creating IAM user Bob... Successed!
    Creating IAM user Alice... Successed!
    
@@ -50,10 +50,10 @@ AWSのIAMユーザーを一括で作成するだけのプロダクト
    users.txt
    
    $ cat 123456789012_ACCOUNT-ALIAS_Alice_accesskey.txt
-   GENERATED_AWS_ACCESSKEY_ID_HERE GENERATED_AWS_SECRET_ACCESS_KEY_HERE
+   生成されたAWS_ACCESSKEY_ID 生成されたAWS_SECRET_ACCESS_KEY
    
    $ cat 123456789012_ACCOUNT-ALIAS_Alice_password.txt
-   https://123456789012.signin.aws.amazon.com/console kashiwaguma-hiro GENERATED_PASSWORD_HERE
+   https://123456789012.signin.aws.amazon.com/console kashiwaguma-hiro 生成されたPASSWORD
    ```
 
 ## 参考にさせていただいたサイト
