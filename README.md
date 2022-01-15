@@ -1,4 +1,4 @@
-# aws-user-creater
+# aws-user-creator
 AWSのIAMユーザーを一括で作成するだけのプロダクト
 
 ## 動作環境
@@ -7,8 +7,8 @@ AWSのIAMユーザーを一括で作成するだけのプロダクト
 
 ## 使い方
 ```
-% ./aws-create-user.sh -h
-使い方: ./aws-create-user.sh -g group_name [-f path] [-aph] args
+% ./aws-user-creator.sh -h
+使い方: ./aws-user-creator.sh -g group_name [-f path] [-aph] args
   -g group_name: ユーザの所属グループを指定します. 必須パラメータです.
   -f filepath  : ユーザを記載したファイルのパスを指定します.デフォルトは ./users.txt .
   -p           : ログイン用のパスワードを生成します. 生成したパスワードは ./[AWS_ACCOUNT_ID]_[AWS_ACCOUNT_ALIAS]_ユーザ名_password.txt に出力されます.
@@ -38,7 +38,7 @@ AWSのIAMユーザーを一括で作成するだけのプロダクト
    (例) IAMユーザとともに、ログイン用のパスワード、アクセスキーも生成する  
    ```
    $ AWS_ACCESS_KEY_ID=3.AWS_ACCESS_KEY_IDを指定 AWS_SECRET_ACCESS_KEY=3.AWS_SECRET_ACCESS_KEYを指定 \
-     sh aws-create-user.sh -g 2.IAMユーザーグループ名を指定 -p -a
+     sh aws-user-creator.sh -g 2.IAMユーザーグループ名を指定 -p -a
    Creating IAM user Bob...Successed!
    Creating IAM user Alice...Successed!
    
